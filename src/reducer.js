@@ -7,20 +7,20 @@ export function authentication(state = initialState, action) {
     switch (action.type) {
         case "LOGIN_REQUEST":
             return {
-                ...initialState,
+                ...state,
                 loading: true,
                 user: {},
             };
         case "LOGIN_SUCCESS":
             debugger;
             return {
-                ...initialState,
+                ...state,
                 loading: false,
-                user: action.values.value,
+                user: action.payload,
             };
         case "LOGIN_FAILURE":
             return {
-                ...initialState,
+                ...state,
                 user: {},
                 error: true
 
